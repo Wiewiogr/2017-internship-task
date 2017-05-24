@@ -23,7 +23,6 @@ public class Scheduler {
             throw new IllegalArgumentException("There is no task with this id.");
     }
 
-
     private void createAndStartInspector(){
         inspector = new Thread(new Inspector(tasks));
         inspector.start();

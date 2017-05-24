@@ -15,7 +15,7 @@ import static org.mockito.Mockito.verify;
  */
 public class SchedulerStart {
     @Test
-    public void scheduler_start_should_be_invoked() throws InterruptedException {
+    public void scheduler_start_callback_should_be_invoked() throws InterruptedException {
         Scheduler scheduler = new Scheduler();
         Callback callback = mock(Callback.class);
         Assert.assertEquals(0, scheduler.start(1,callback));
@@ -51,7 +51,7 @@ public class SchedulerStart {
     }
 
     @Test
-    public void add_hundered_tasks_they_should_be_invoked() throws InterruptedException {
+    public void add_hundred_tasks_they_should_be_invoked() throws InterruptedException {
         Scheduler scheduler = new Scheduler();
 
         List<Callback> callbacks = new ArrayList<>();

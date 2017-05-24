@@ -35,7 +35,7 @@ public class SchedulerStartAndStop {
     }
 
     @Test
-    public void add_hundered_tasks_then_stop_half_of_them() throws InterruptedException {
+    public void add_hundred_tasks_then_stop_half_of_them_half_of_them_should_be_invoked_the_rest_not() throws InterruptedException {
         Scheduler scheduler = new Scheduler();
 
         List<Callback> callbacks = new ArrayList<>();

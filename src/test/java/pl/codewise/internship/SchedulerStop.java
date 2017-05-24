@@ -1,6 +1,5 @@
 package pl.codewise.internship;
 
-import jdk.nashorn.internal.codegen.CompilerConstants;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -12,7 +11,7 @@ import static org.mockito.Mockito.verify;
  */
 public class SchedulerStop {
     @Test
-    public void stop_with_timerid_that_exists_should_not_be_invoked(){
+    public void stop_with_timerid_that_exists_callback_should_not_be_invoked(){
         Scheduler scheduler = new Scheduler();
         Callback callback = mock(Callback.class);
         int id = scheduler.start(10,callback);
