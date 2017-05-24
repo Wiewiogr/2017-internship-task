@@ -24,16 +24,6 @@ public class Inspector implements Runnable{
                     .peek(e -> tasks.get(e.getKey()).tick())
                     .filter(e -> tasks.get(e.getKey()).hasEnded())
                     .forEach(e -> tasks.remove(e.getKey()));
-
-            //tasks.entrySet().stream()
-
-           // tasks.entrySet().stream()
-           //         .filter(e -> tasks.get(e.getKey()).shouldTimerTick())
-           //         .forEach(e -> tasks.get(e.getKey()).tick());
-
-           // tasks.entrySet().stream()
-           //         .filter(e -> tasks.get(e.getKey()).hasEnded())
-           //         .forEach(e -> tasks.remove(e.getKey()));
         }
     }
 }

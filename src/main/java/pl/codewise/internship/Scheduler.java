@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Scheduler {
     private ConcurrentHashMap<Integer, Task> tasks = new ConcurrentHashMap<>();
-    Thread inspector;
+    private Thread inspector;
     private int currentTimerId = 0;
 
     public int start(int expirationTime, Callback callback){
@@ -18,8 +18,8 @@ public class Scheduler {
         return currentTimerId++;
     }
 
-    public void stop(int timerid){
-        if(tasks.remove(timerid) == null)
+    public void stop(int timerId){
+        if(tasks.remove(timerId) == null)
             throw new IllegalArgumentException("There is no task with this id.");
     }
 

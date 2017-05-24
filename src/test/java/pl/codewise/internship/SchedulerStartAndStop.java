@@ -3,6 +3,9 @@ package pl.codewise.internship;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.mockito.Mockito.*;
 
 /**
@@ -31,4 +34,28 @@ public class SchedulerStartAndStop {
 
     }
 
+    @Test
+    public void add_hundered_tasks_then_stop_half_of_them() throws InterruptedException {
+        Scheduler scheduler = new Scheduler();
+
+        List<Callback> callbacks = new ArrayList<>();
+        for(int  i =0 ; i < 100; i ++){
+            Callback newCallback = mock(Callback.class);
+            callbacks.add(newCallback);
+            Assert.assertEquals(i, scheduler.start(1,newCallback));
+        }
+
+        for (int i = 0; i < 50; i++) {
+            scheduler.stop(i);
+        }
+
+        Thread.sleep(1100);
+        for (int i = 50; i < 100 ; i ++ ){
+            verify(callbacks.get(i), times(1)).invoke();
+        }
+
+        for (int i = 0; i < 50 ; i ++ ){
+            verify(callbacks.get(i), never()).invoke();
+        }
+    }
 }

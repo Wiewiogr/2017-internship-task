@@ -8,18 +8,12 @@ public class Task {
     private Callback callback;
     private int timeLeft;
     private long lastTickTime;
-    Thread thread;
+
     public Task(int timerid, Callback callback, int time) {
         this.timerid = timerid;
         this.callback = callback;
         this.timeLeft = time;
         this.lastTickTime = System.currentTimeMillis();
-
-        thread = new Thread(() -> {
-           for(int i = 0 ; i < time; i++){
-
-           }
-        });
     }
 
     public boolean shouldTimerTick(){
@@ -33,11 +27,9 @@ public class Task {
        if(hasEnded()){
            clear();
        }
-       System.out.println("ticked");
     }
 
     private void clear(){
-        System.out.println("invoked");
         callback.invoke();
     }
 
