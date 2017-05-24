@@ -1,4 +1,4 @@
-Nazywam się Tomasz Wiewióra.
+#### Nazywam się Tomasz Wiewióra, jest to moje rozwiązanie zadania.
 
 Scheduler
  
